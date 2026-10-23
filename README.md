@@ -12,6 +12,8 @@ paseo plugin install github:yboyer/paseo-auto-theme
 
 In **Settings → Appearance → Theme**, select **Auto · Light / Ghostty** once. Keep this theme selected rather than Paseo's built-in **Auto** option. Subsequent system appearance changes replace the plugin's palette automatically.
 
+![Paseo theme selector with Auto · Light / Ghostty selected](docs/images/theme-selector.png)
+
 The plugin contributes one adaptive theme. It does not select Paseo's built-in themes or alter their settings. Choosing another theme stops displaying this plugin's palette; disabling the plugin restores Paseo's fallback theme.
 
 ## Compatibility
@@ -26,12 +28,9 @@ Section headings use the original themes' muted text colors. Paseo shares the pl
 
 ## Development
 
-Use Node.js 22.18+, 24.11+, or 26+. Vite+ is pinned to **1.4.0**.
-
 ```sh
 npm ci
-npm run check
-npm run typecheck
+npm run lint
 npm test
 ```
 
@@ -45,7 +44,3 @@ paseo plugin reload paseo-auto-theme
 ```
 
 Automated tests cover startup in both modes, light/dark transitions, stable theme IDs, repeated events, cleanup/reload, missing preferences, and native foreground synchronization. Device-level checks are still needed to verify the appearance behavior of each Paseo client release.
-
-## License
-
-Apache-2.0. Palette attribution is in [NOTICE](NOTICE).
