@@ -14,7 +14,8 @@ const palettes = {
     border: "#e4e4e7",
     accent: "#20744a",
     mutedForeground: "#71717a",
-    ring: "#18181b",
+    // Paseo also uses this token for section headings (foregroundExtraMuted).
+    ring: "#a1a1aa",
   },
   dark: {
     background: "#282c34",
@@ -24,7 +25,7 @@ const palettes = {
     border: "#353a47",
     accent: "#89b4fa",
     mutedForeground: "#c8ccd8",
-    ring: "#d4d4d8",
+    ring: "#a0a4b2",
   },
 } satisfies Record<Scheme, ThemeContribution["colors"]>;
 

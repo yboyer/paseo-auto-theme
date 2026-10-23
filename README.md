@@ -22,6 +22,8 @@ The plugin contributes one adaptive theme. It does not select Paseo's built-in t
 
 The palettes are adapted from Paseo's Light and Ghostty themes. The plugin API exposes fewer color tokens than the built-in themes, so sidebar, terminal, status, and accent details may differ. It does not discover or switch to arbitrary installed themes.
 
+Section headings use the original themes' muted text colors. Paseo shares the plugin's `ring` token between these headings, focus rings, terminal bright black, and the highest surface tint, so those details cannot all match the originals simultaneously. For dark plugin themes, Paseo also forces the sidebar to share the main background; Ghostty's darker sidebar cannot be reproduced through the current public theme API.
+
 ## Development
 
 Use Node.js 22.18+, 24.11+, or 26+. Vite+ is pinned to **1.4.0**.
