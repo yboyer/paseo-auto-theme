@@ -60,14 +60,23 @@ describe("adaptive theme registration", () => {
       appearance: "light",
       colors: { background: "#ffffff" },
     });
+    expect(app.themes.get("github-one-dark-pro")).toMatchObject({
+      appearance: "light",
+      colors: { background: "#ffffff", foreground: "#1f2328", accent: "#0969da" },
+    });
     os.emit(true);
-    expect(app.themes.size).toBe(1);
+    expect(app.themes.size).toBe(2);
     expect(app.themes.get("auto")).toMatchObject({
       appearance: "dark",
       colors: { background: "#282c34", accent: "#89b4fa" },
     });
+    expect(app.themes.get("github-one-dark-pro")).toMatchObject({
+      appearance: "dark",
+      colors: { background: "#282c34", foreground: "#abb2bf", accent: "#61afef" },
+    });
     os.emit(false);
     expect(app.themes.get("auto")?.appearance).toBe("light");
+    expect(app.themes.get("github-one-dark-pro")?.appearance).toBe("light");
     stop();
   });
 
@@ -76,14 +85,15 @@ describe("adaptive theme registration", () => {
     const app = host();
     const stop = app.start();
     expect(app.themes.get("auto")?.appearance).toBe("dark");
+    expect(app.themes.get("github-one-dark-pro")?.appearance).toBe("dark");
     os.emit(true);
-    expect(app.addTheme).toHaveBeenCalledTimes(1);
+    expect(app.addTheme).toHaveBeenCalledTimes(2);
     stop();
     stop();
     expect(os.listeners.size).toBe(0);
     expect(app.themes.size).toBe(0);
     os.emit(false);
-    expect(app.addTheme).toHaveBeenCalledTimes(1);
+    expect(app.addTheme).toHaveBeenCalledTimes(2);
     const stopAgain = app.start();
     expect(app.themes.get("auto")?.appearance).toBe("light");
     stopAgain();

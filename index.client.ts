@@ -1,18 +1,18 @@
 import type { PluginClientContext } from "@getpaseo/plugin/client";
-import { themeFor, type Scheme } from "./client/palettes";
+import { themesFor, type Scheme } from "./client/palettes";
 import { watchSystemAppearance } from "./client/system-appearance";
 
 export default function contribute(client: PluginClientContext): () => void {
   let current: Scheme | undefined;
-  let removeTheme: (() => void) | undefined;
+  let removeThemes: (() => void)[] = [];
   let stopped = false;
 
   const stopWatching = watchSystemAppearance((scheme) => {
     if (stopped || current === scheme) return;
     // Reuse the ID so Paseo keeps the user's selected theme across OS changes.
     // Registration must be synchronous: the host rejects duplicate theme IDs.
-    removeTheme?.();
-    removeTheme = client.addTheme(themeFor(scheme));
+    for (const remove of removeThemes) remove();
+    removeThemes = themesFor(scheme).map((theme) => client.addTheme(theme));
     current = scheme;
   });
 
@@ -20,6 +20,6 @@ export default function contribute(client: PluginClientContext): () => void {
     if (stopped) return;
     stopped = true;
     stopWatching();
-    removeTheme?.();
+    for (const remove of removeThemes) remove();
   };
 }

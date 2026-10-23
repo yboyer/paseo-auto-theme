@@ -8,3 +8,17 @@ Licensed under the Apache License, Version 2.0.
 
 Changes: map the built-in palettes to Paseo's smaller plugin theme palette.
 Prioritize the original foregroundExtraMuted colors for the shared ring token.
+
+GitHub Light Default palette adapted from GitHub VS Code Theme:
+https://github.com/primer/github-vscode-theme/tree/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf
+Copyright (c) 2020 Primer
+Licensed under the MIT License (see licenses/github-vscode-theme-MIT.txt).
+Palette primitives: @primer/primitives 7.10.0, with the theme's Light overrides.
+
+One Dark Pro default palette adapted from:
+https://github.com/Binaryify/OneDark-Pro/blob/ce79c5f7116607d635e06b7ef4413d85a77905e4/themes/OneDark-Pro.json
+Copyright (c) 2013-2022 Binaryify
+Licensed under the MIT License (see licenses/one-dark-pro-MIT.txt).
+
+Changes: map each VS Code interface palette to Paseo's plugin color tokens.
+Use the upstream link color for accents and muted text for the shared ring token.

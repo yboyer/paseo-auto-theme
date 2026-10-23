@@ -1,6 +1,6 @@
 # Paseo auto theme
 
-Automatically use a Light palette when your device is in light mode and a Ghostty palette when it is in dark mode. Runs entirely in the Paseo client, independently of the daemon machine's appearance.
+Automatically switch between light and dark palettes with your device's appearance. Runs entirely in the Paseo client, independently of the daemon machine's appearance.
 
 ## Install
 
@@ -10,9 +10,14 @@ Requires Paseo 0.12.0 or later on both the daemon and the client, with plugins e
 paseo plugin install github:yboyer/paseo-auto-theme
 ```
 
-In **Settings → Appearance → Theme**, select **Auto · Light / Ghostty** once. Keep this theme selected rather than Paseo's built-in **Auto** option. Subsequent system appearance changes replace the plugin's palette automatically.
+In **Settings → Appearance → Theme**, select one of these automatic variants:
 
-The plugin contributes one adaptive theme. It does not select Paseo's built-in themes or alter their settings. Choosing another theme stops displaying this plugin's palette; disabling the plugin restores Paseo's fallback theme.
+| Theme                                      | Light mode           | Dark mode              |
+| ------------------------------------------ | -------------------- | ---------------------- |
+| Auto · Light / Ghostty                     | Paseo Light          | Paseo Ghostty          |
+| Auto · GitHub Light Default / One Dark Pro | GitHub Light Default | One Dark Pro (default) |
+
+Keep the chosen variant selected rather than Paseo's built-in **Auto** option. Subsequent system appearance changes replace its palette automatically. The plugin does not select Paseo's built-in themes or alter their settings. Choosing another theme stops displaying this plugin's palette; disabling the plugin restores Paseo's fallback theme.
 
 ## Compatibility
 
@@ -20,7 +25,7 @@ The plugin contributes one adaptive theme. It does not select Paseo's built-in t
 - iOS and Android use React Native's appearance notifications and refresh when the app returns to the foreground. An appearance override imposed by the host app can take precedence over the OS preference.
 - If no preference is available, Light is used.
 
-The palettes are adapted from Paseo's Light and Ghostty themes. The plugin API exposes fewer color tokens than the built-in themes, so sidebar, terminal, status, and accent details may differ. It does not discover or switch to arbitrary installed themes.
+The palettes are adapted from Paseo's Light and Ghostty themes, [GitHub Light Default](https://github.com/primer/github-vscode-theme), and [One Dark Pro](https://github.com/Binaryify/OneDark-Pro). The plugin API exposes fewer color tokens than the original themes, so sidebar, terminal, status, and accent details may differ. It does not discover or switch to arbitrary installed themes. Code syntax highlighting remains controlled separately by Paseo's **Highlight theme** setting; these variants adapt the interface palettes only.
 
 Section headings use the original themes' muted text colors. Paseo shares the plugin's `ring` token between these headings, focus rings, terminal bright black, and the highest surface tint, so those details cannot all match the originals simultaneously. For dark plugin themes, Paseo also forces the sidebar to share the main background; Ghostty's darker sidebar cannot be reproduced through the current public theme API.
 

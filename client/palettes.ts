@@ -29,11 +29,42 @@ const palettes = {
   },
 } satisfies Record<Scheme, ThemeContribution["colors"]>;
 
-export function themeFor(scheme: Scheme): ThemeContribution {
-  return {
-    id: "auto",
-    name: "Auto · Light / Ghostty",
-    appearance: scheme,
-    colors: { ...palettes[scheme] },
-  };
+const githubOneDarkPalettes = {
+  light: {
+    background: "#ffffff",
+    foreground: "#1f2328",
+    raised: "#f6f8fa",
+    control: "#f6f8fa",
+    border: "#d0d7de",
+    accent: "#0969da",
+    mutedForeground: "#656d76",
+    ring: "#6e7781",
+  },
+  dark: {
+    background: "#282c34",
+    foreground: "#abb2bf",
+    raised: "#21252b",
+    control: "#1d1f23",
+    border: "#3e4452",
+    accent: "#61afef",
+    mutedForeground: "#abb2bf",
+    ring: "#6b717d",
+  },
+} satisfies Record<Scheme, ThemeContribution["colors"]>;
+
+export function themesFor(scheme: Scheme): ThemeContribution[] {
+  return [
+    {
+      id: "auto",
+      name: "Auto · Light / Ghostty",
+      appearance: scheme,
+      colors: { ...palettes[scheme] },
+    },
+    {
+      id: "github-one-dark-pro",
+      name: "Auto · GitHub Light Default / One Dark Pro",
+      appearance: scheme,
+      colors: { ...githubOneDarkPalettes[scheme] },
+    },
+  ];
 }

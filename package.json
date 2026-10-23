@@ -2,7 +2,7 @@
   "name": "paseo-auto-theme",
   "version": "0.1.0",
   "private": true,
-  "description": "Follow the system appearance with Light and Ghostty palettes in Paseo.",
+  "description": "Follow system appearance with Light / Ghostty or GitHub Light Default / One Dark Pro palettes in Paseo.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -14,7 +14,8 @@
     "index.client.ts",
     "client/",
     "LICENSE",
-    "NOTICE"
+    "NOTICE",
+    "licenses/"
   ],
   "type": "module",
   "scripts": {
