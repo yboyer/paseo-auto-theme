@@ -1,9 +1,13 @@
-import { defineConfig } from "vite-plus";
+import { URL } from 'node:url'
 
-export default defineConfig({
-  lint: { options: { typeAware: true, typeCheck: true } },
-  test: {
-    include: ["tests/**/*.test.ts"],
-    alias: { "react-native": new URL("./tests/react-native.ts", import.meta.url).pathname },
-  },
-});
+import config from '@yboyer/config/vite-plus'
+import { defineConfig, mergeConfig } from 'vite-plus'
+
+export default defineConfig(
+  mergeConfig(config, {
+    test: {
+      include: ['tests/**/*.test.ts'],
+      alias: { 'react-native': new URL('./tests/react-native.ts', import.meta.url).pathname },
+    },
+  })
+)
