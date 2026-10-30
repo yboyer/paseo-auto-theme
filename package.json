@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@getpaseo/plugin": "0.12.0",
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.5",
     "@types/react": "19.3.0",
     "@yboyer/config": "2.1.2",
     "react": "19.1.10",
