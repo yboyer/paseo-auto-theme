@@ -23,7 +23,7 @@
     "format": "vp fmt"
   },
   "devDependencies": {
-    "@getpaseo/plugin": "0.14.0",
+    "@getpaseo/plugin": "0.15.0",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@yboyer/config": "2.1.2",
