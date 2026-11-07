@@ -1,14 +1,10 @@
 {
+  "extends": "@tsconfig/node26/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2023",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "lib": ["ES2023"],
-    "types": ["node"],
     "strict": true,
-    "skipLibCheck": true,
-    "noEmit": true,
-    "esModuleInterop": true
+    "noEmit": true
   },
   "include": ["index.client.ts", "client/**/*.ts", "tests/**/*.ts", "vite.config.ts"]
 }
