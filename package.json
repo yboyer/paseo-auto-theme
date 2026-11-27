@@ -23,7 +23,7 @@
     "format": "vp fmt"
   },
   "devDependencies": {
-    "@getpaseo/plugin": "0.16.2",
+    "@getpaseo/plugin": "0.17.4",
     "@tsconfig/node26": "26.0.2",
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
